@@ -1,0 +1,39 @@
+ENDPOINTS
+
+*USER-SERVICE*
+GET http://localhost:8765/users-service/users - pregled svih korisnika
+POST http://localhost:8765/users-service/users/addUser - dodavanje korisnika
+POST http://localhost:8765/users-service/users/addAdminUser - dodavanje admina/korisnika
+PUT http://localhost:8765/users-service/users/updateUser/{email} - izmena korisnika
+PUT http://localhost:8765/users-service/users/update/{email} - izmena admina/korisnika
+DELETE http://localhost:8765/users-service/users/removeUser/{email} - brisanje korisnika
+
+*BANK-ACCOUNT*
+GET http://localhost:8765/bank-account 
+POST http://localhost:8765/bank-account/addAccount - poziva se kada se dodaje novi korisnik
+PUT http://localhost:8765/bank-account/changeUserEmail/{email} - poziva se ukoliko dodje do promene imejla korinika
+PUT http://localhost:8765/bank-account - poziva se kada se vrsi razmena i transfer novca
+DELETE http://localhost:8765/bank-account/removeUser/{email} - brisanje bank-accounta kada se obrise korisnik
+
+*CURRENCY-EXCHANGE*
+GET http://localhost:8765/currency-exchange/from/{from}/to/{to} - vrednost kursa
+
+*CURRENCY-CONVERSION*
+GET http://localhost:8765/currency-conversion?from=EUR&to=CHF&quantity=20 - pretvaranje iz jedne valute u drugu
+
+*CRYPTO-WALLET*
+GET http://localhost:8765/crypto-wallet - pregled svih crypto novcanika
+POST http://localhost:8765/crypto-wallet/addAccount - poziva se kada se doda novi korisnik
+PUT http://localhost:8765/crypto-wallet/editWallet/{email} - izmena kolicina kripto valuta u novcaniku
+PUT http://localhost:8765/crypto-wallet/changeUserEmail/{email} - poziva se ukoliko dodje do promene imejla korisnika
+PUT http://localhost:8765/crypto-wallet - poziva se kada dodje do uspesne razmene i transfera crypto valuta
+DELETE http://localhost:8765/crypto-wallet/removeUser/{email} - brisanje crypto-walleta kada se obrise korisnik
+
+*CRYPTO-EXCHANGE*
+GET http://localhost:8765/crypto-exchange/from/{from}/to/{to} - vrednost kursa kod menjanja kripto valuta
+
+*CRYPTO-CONVERSION*
+GET http://localhost:8765/crypto-conversion?from=BTC&to=BNB&quantity=10 - pretvaranje iz jedne kripto valute u drugu
+
+*TRADE-SERVICE*
+GET http://localhost:8765/trade-service/from/ETH/to/USD/user/abc@gmail.com/quantity/12 - pretvaranje iz kripto valuta u obicne i obrnuto, za odgovarajuceg korisnika
